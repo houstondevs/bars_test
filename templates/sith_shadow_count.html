@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>Количество рук тени у всех ситхов:</h2>
+    {% for sith in siths %}
+        <p>{{ sith.name }} -  Количество рук тени: {{ sith.recruit.count }} </p>
+    {% endfor %}
+    <h2>Стихи у которых более одной руки тени:</h2>
+    {% for sith in siths %}
+        {% if sith.recruit.count > 1 %}
+            <p>{{ sith.name }} -  Количество рук тени: {{ sith.recruit.count }} </p>
+        {% endif %}
+    {% endfor %}
+</body>
+</html>

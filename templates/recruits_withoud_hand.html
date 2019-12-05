@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h3>Рекруты без руки тени</h3>
+    {% for recruit in recruits %}
+        <p><a href="{{ recruit.get_absolute_url }}">{{ recruit.name }}</a></p>
+    {% endfor %}
+</body>
+</html>

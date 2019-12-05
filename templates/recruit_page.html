@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p>Имя: {{ recruit.name }}</p>
+    <p>Планета обитания: {{ recruit.planet }}</p>
+    <p>Возраст: {{ recruit.age }}</p>
+    <p>Email: {{ recruit.email }}</p>
+
+    {% for answer in answers %}
+        <div>
+            <p style="font-weight: bold">Вопрос: {{ answer.question.text }}</p>
+            <p>Ответ - {{ answer.answer }}</p>
+        </div>
+    {% endfor %}
+
+    {% if recruit.shadow == False %}
+        <a href="{% url 'accept-recruit-page'  %}"><button>Принять к себе</button></a>
+    {% else %}
+        <h1>Уже есть учитель</h1>
+    {% endif %}
+</body>
+</html>
